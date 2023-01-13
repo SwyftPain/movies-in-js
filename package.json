@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "nodemon ./bin/www"
+        "start": "node ./bin/www"
     },
     "main_html": "",
     "disable_http_cache": false,
