@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        display:list-item;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input[type="text"] {
+        width: 200px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5em;
+      }
+
+      input[type="email"] {
+        width: 200px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5em;
+      }
+
+      input[type="username"] {
+        width: 200px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5em;
+      }
+
+      input[type="password"] {
+        width: 200px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 0.5em;
+      }
+
+      button[type="submit"] {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(18, 163, 189);
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      button[type="submit"].watched {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(11, 98, 114);
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      button[type="submit"].add {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(18, 189, 55);
+        border: none;
+        border-radius: 5px;
+      }
+
+      button[type="submit"].remove {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(189, 18, 18);
+        border: none;
+        border-radius: 5px;
+      }
+
+      button[type="submit"].random {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(204, 218, 13);
+        border: none;
+        border-radius: 5px;
+      }
+
+      button[type="submit"]:hover {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(18, 163, 189);
+        border: none;
+        border-radius: 5px;
+        opacity: 0.9;
+      }
+
+      button[type="submit"].isWatched {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(11, 98, 114);
+        border: none;
+        border-radius: 5px;
+        opacity: 0.9;
+      }
+
+      button[type="submit"].watched:hover {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(11, 98, 114);
+        border: none;
+        border-radius: 5px;
+        opacity: 0.9;
+      }
+
+      button[type="submit"].add:hover {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(18, 189, 55);
+        border: none;
+        border-radius: 5px;
+        opacity: 0.9;
+      }
+
+      button[type="submit"].remove:hover {
+        width: 220px;
+        height: 40px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(189, 18, 18);
+        border: none;
+        border-radius: 5px;
+        opacity: 0.9;
+      }
+
+      button[type="submit"].random:hover {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(204, 218, 13);
+        border: none;
+        border-radius: 5px;
+        opacity: 0.9;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      li {
+        list-style: none;
+        width: 99%;
+      }
+
+      form button {
+        font-size: 14px;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register/Login</h1>
+    <center>
+    <form method="get" action="/">
+        <a href="/"><button type="submit" class="add" style="cursor: pointer;">Back to homepage</button></a><br><br><br>
+    </form>
+    <form action="/createuser" method="post">
+      <input type="email" name="email" placeholder="Email" required /><br><br>
+      <input type="password" name="password" placeholder="Password" required /><br><br>
+      <input type="text" name="username" placeholder="Username" required /><br><br>
+      <button type="submit" class="add" style="cursor: pointer;">Register</button>
+    </form><br>
+    <form action="/loginuser" method="post">
+        <input type="email" name="email" placeholder="Email" required /><br><br>
+        <input type="password" name="password" placeholder="Password" required /><br><br>
+        <button type="submit" class="add" style="cursor: pointer;">Login</button>
+      </form>
+</center>
+  </body>
+</html>

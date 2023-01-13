@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Movie</title>
+    <style>
+      body {
+        background-color: #333;
+        color: #fff;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      button[type="submit"].add {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(18, 189, 55);
+        border: none;
+        border-radius: 5px;
+      }
+
+      button[type="submit"].random {
+        width: 220px;
+        height: 30px;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(215, 218, 8);
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Movie</h1>
+    <center>
+      <% if(user.loggedin) { %>
+      <p>Selected movie: <b><%= randomMovie %></b></p>
+        <a href="/?email=<%= user.email %>"><button type="submit" class="add" style="cursor: pointer">
+          Back to the movie list
+        </button></a>
+      <br><br>
+      <form action="/movies/random?email=<%= user.email %>" method="post">
+        <button type="submit" class="random" style="cursor: pointer">
+          Another random movie
+        </button>
+      </form>
+      <% } %>
+    </center>
+  </body>
+</html>
