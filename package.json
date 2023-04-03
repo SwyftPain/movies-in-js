@@ -14,7 +14,7 @@
     "name": "py",
     "dependencies": {
         "debug": "~2.6.9",
-        "nodemon": "^2.0.20",
+        "nodemon": "^2.0.21",
         "quick.db": "^9.0.8",
         "cookie-parser": "~1.4.4",
         "ejs": "~3.1.7",
